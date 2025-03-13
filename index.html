@@ -151,6 +151,64 @@ console.log('Minulla on ' + booksCount('kirja', 0));  // "Minulla on 0 kirjaa"
 console.log('Minulla on ' + booksCount('kirja', 1));  // "Minulla on 1 kirja"
 console.log('Minulla on ' + booksCount('kirja', 5));  // "Minulla on 5 kirjaa"
 
+// for-silmukalla
+for (let i = 1; i < 100; i += 2) {
+  console.log(i);
+}
+
+// while-silmukalla
+let j = 1;
+while (j < 100) {
+  console.log(j);
+  j += 2;
+} 
+
+// Jos halutaan tieto samalle riville
+let luvut = "";
+for (let k = 1; k < 100; k += 2) {
+  luvut += k + ", ";
+}
+console.log(luvut);
+
+let etaisyys, aika;
+
+while (true) {
+  // Pyydetään käyttäjältä etäisyys
+  etaisyys = Number(prompt("Syötä etäisyys kilometreinä (0 lopettaaksesi):"));
+
+  // Jos etäisyys on 0, lopetetaan ohjelma
+  if (etaisyys === 0) {
+    console.log("Ei enempää keskinopeuksia.");
+    break;
+  }
+
+  // Pyydetään käyttäjältä aika
+  aika = Number(prompt("Anna aika tunteina:"));
+
+  // Lasketaan keskinopeus
+  let keskinopeus = etaisyys / aika;
+  let pyoristetty = keskinopeus.toFixed(1);
+
+  // Tulostetaan tulos
+  console.log(`Kun ajetaan ${etaisyys} kilometriä ${aika} tunnin aikana, keskinopeus on ${pyoristetty} km/h.`);
+}
+
+let parilliset = 0;
+
+// Käytetään for-silmukkaa, joka pyytää käyttäjältä 20 lukua
+for (let kertalaskuri = 0; kertalaskuri < 20; kertalaskuri++) {
+  let syote = Number(prompt("Syötä numero:"));
+  console.log("Syöte on:", syote);
+
+  if (syote % 2 === 0) {
+    parilliset++;
+  }
+}
+
+console.log("Parillisten lukujen määrä on:", parilliset);
+
+
+
     </script>
 
 </body>

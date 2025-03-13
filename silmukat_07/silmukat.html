@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numeroiden laskeminen</title>
+</head>
+<body>
+    <h1>Syötä 10 numeroa</h1>
+    <p>Ohjelma laskee ja tulostaa syötettyjen numeroiden summan, keskiarvon, pienimmän ja suurimman numeron.</p>
+
+    <script>
+        let summa = 0;
+        let lukujenMaara = 0;
+        let maxLuku = -Infinity; // ensimmäinen käyttäjän antama luku on isompi kuin tämä
+        let minLuku = Infinity; // ensimmäinen käyttäjän antama luku on pienempi kuin tämä
+
+        for (let i = 0; i < 10; i++) {
+            let syote = Number(prompt("Anna numero:"));
+
+            // jos syöte ei ole luku, sitä ei huomioida
+            if (isNaN(syote)) {
+                alert("Syöte ei ollut numero! Yritä uudelleen.");
+                continue; // jos syöte ei ole numero, jatketaan seuraavaan syötteeseen
+            } else {
+                summa += syote;
+                lukujenMaara++;
+
+                // katsotaan mikä annetuista luvuista on suurin
+                if (syote > maxLuku) {
+                    maxLuku = syote;
+                }
+
+                // katsotaan mikä annetuista luvuista on pienin
+                if (syote < minLuku) {
+                    minLuku = syote;
+                }
+            }
+        }
+
+        let keskiarvo = summa / lukujenMaara;
+        alert(`Lopussa:
+        - Lukujen summa: ${summa}
+        - Lukujen keskiarvo: ${keskiarvo}
+        - Isoin annettu luku: ${maxLuku}
+        - Pienin annettu luku: ${minLuku}`);
+    </script>
+</body>
+</html>
