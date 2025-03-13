@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03_harjoitukset_javascript</title>
+</head>
+<body>
+
+    <h1>3.osio JavaScript-tehtäviä</h1>
+
+    <!-- JavaScript-tekstit laitetaan scriptin sisään tähän -->
+    <script>
+
+// Funktio canVote, joka tarkistaa, onko ikä 18 tai enemmän
+function canVote(age) {
+  return age >= 18;  // Palauttaa true, jos ikä on 18 tai enemmän, muuten false
+}
+
+// Esimerkkikäyttö - älä muokkaa
+console.log(canVote(25)); // true
+console.log(canVote(18)); // true
+console.log(canVote(10)); // false
+
+// Funktio canDrive, joka tarkistaa, onko ikä 18 tai enemmän ajokorttia varten
+function canDrive(age) {
+  return age >= 18;  // Palauttaa true, jos ikä on 18 tai enemmän, muuten false
+}
+
+// Kutsutaan tekemäämme funktiota
+console.log(canDrive(20)); // true
+console.log(canDrive(16)); // false
+
+
+    </script>
+
+</body>
+</html>
