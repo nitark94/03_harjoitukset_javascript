@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Magic 8-Ball</title>
+</head>
+<body>
+
+  <h1>Magic 8-Ball</h1>
+  <p>Esitä kysymys, ja Magic 8-Ball antaa sinulle vastauksen!</p>
+
+  <!-- Lomake kysymykselle -->
+  <input type="text" id="userQuestion" placeholder="Esitä kysymys..." />
+  <button onclick="askMagic8Ball()">Kysy!</button>
+
+  <!-- Vastaus tulostetaan tähän -->
+  <div id="result"></div>
+
+  <script>
+    // Funktio Magic 8-Ball -ohjelmalle
+    function magic8Ball(question) {
+      // Varmistetaan, että käyttäjä antaa kysymyksen
+      if (!question || question.trim() === '') {
+        return 'Esitä kysymys!';
+      }
+
+      // Määritellään 8-pallon mahdolliset vastaukset
+      const answers = [
+        "Kyllä.",
+        "Ei.",
+        "Ehkä.",
+        "Varmasti.",
+        "Ei voi tietää.",
+        "Ei nyt.",
+        "Tulee olemaan vaikeaa.",
+        "Kokeile uudelleen."
+      ];
+
+      // Valitaan satunnainen vastaus vastauksista
+      const randomIndex = Math.floor(Math.random() * answers.length);
+
+      // Palautetaan satunnainen vastaus
+      return answers[randomIndex];
+    }
+
+    // Funktio kysymyksen lähettämiseen
+    function askMagic8Ball() {
+      const question = document.getElementById('userQuestion').value; // Haetaan kysymys lomakkeelta
+      const answer = magic8Ball(question); // Haetaan vastaus
+
+      // Näytetään vastaus HTML-sivulla
+      document.getElementById('result').textContent = answer;
+    }
+  </script>
+
+</body>
+</html>
